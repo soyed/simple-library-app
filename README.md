@@ -17,6 +17,15 @@ A command line application for managing library operations.
 
 ## Overview
 ### Problem Statement
+Create a library application that allows the following operations:
+* Rent a book from the library
+* Return borrowed books
+* Remove | delete books
+  * Restricted to Admin and Staff members
+* Get all books
+* Get all rented books
+* Get all staff members
+  * Restricted to Admin
 
 
 ### Solution
