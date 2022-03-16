@@ -62,6 +62,8 @@ Create a library application that allows the following operations:
 - yargs
   
 ### Lessons
+- Chalk does now supports ESM modules?
+  - 
 
 
 ### Improvements
@@ -71,6 +73,7 @@ Create a library application that allows the following operations:
 - [Yargs](https://www.npmjs.com/package/yargs)
 - [File System](https://nodejs.org/dist/latest-v16.x/docs/api/fs.html#fsappendfilesyncpath-data-options)
 - [Chalk](https://www.npmjs.com/package/chalk)
+- [Chalk Error - ```code: 'ERR_REQUIRE_ESM'```](https://stackoverflow.com/questions/70309135/chalk-error-err-require-esm-require-of-es-module)
   
 ## Author
 

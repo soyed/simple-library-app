@@ -1,4 +1,5 @@
 const yargs = require('yargs');
+const staff = require('./staff');
 
 // 1. Create command to add staff members
 yargs.command({
@@ -18,6 +19,7 @@ yargs.command({
   },
   handler(argv) {
     console.log(argv);
+    staff.addStaff(argv.name, argv.role);
   },
 });
 
