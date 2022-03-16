@@ -1,3 +1,4 @@
+const { notStrictEqual } = require('assert');
 const yargs = require('yargs');
 const staff = require('./staff');
 
@@ -29,13 +30,13 @@ yargs.command({
   describe: 'Remove a staff member',
   builder: {
     name: {
-      type: 'string',
+      name: 'string',
       demandOption: true,
       describe: 'Staff name',
     },
   },
   handler(argv) {
-    console.log(argv);
+    staff.removeStaff(argv.name);
   },
 });
 
@@ -43,8 +44,15 @@ yargs.command({
 yargs.command({
   command: 'all-staffs',
   describe: 'List all staff members',
+  builder: {
+    role: {
+      describe: 'Staff role',
+      type: 'string',
+      demandOption: true,
+    },
+  },
   handler(argv) {
-    console.log(argv);
+    staff.getAllStaffs(argv.role);
   },
 });
 
@@ -70,9 +78,7 @@ yargs.command({
     name: {},
     removedBy: {},
   },
-  handler(argv) {
-    console.log(argv);
-  },
+  handler(argv) {},
 });
 
 // 6. Get all books
