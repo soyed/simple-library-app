@@ -1,0 +1,24 @@
+{
+  "name": "simple-library-app",
+  "version": "1.0.0",
+  "description": "A command line application for managing library operations.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/soyed/simple-library-app.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/soyed/simple-library-app/issues"
+  },
+  "homepage": "https://github.com/soyed/simple-library-app#readme",
+  "dependencies": {
+    "chalk": "^5.0.1",
+    "yargs": "^17.3.1"
+  }
+}
