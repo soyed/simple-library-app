@@ -1,6 +1,5 @@
 const fs = require('fs');
 const chalk = require('chalk');
-// const chalk = require('chalk');
 const { checkStaffRole } = require('./utils');
 
 /*==============  Helper Methods  ===================*/

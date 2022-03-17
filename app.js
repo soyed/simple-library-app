@@ -61,12 +61,24 @@ yargs.command({
   command: 'add-book',
   describe: 'Add a book to library collection',
   builder: {
-    name: {},
-    author: {},
-    addedBy: {},
+    title: {
+      describe: 'Book title',
+      demandOption: true,
+      type: 'string',
+    },
+    author: {
+      describe: 'Book author',
+      demandOption: true,
+      type: 'string',
+    },
+    role: {
+      describe: 'Person who added the book',
+      demandOption: true,
+      type: 'string',
+    },
   },
   handler(argv) {
-    console.log(argv);
+    console.log(argv.title, argv.author, argv.addedBy);
   },
 });
 
@@ -75,10 +87,25 @@ yargs.command({
   command: 'remove-book',
   describe: 'Remove a book from library collection',
   builder: {
-    name: {},
-    removedBy: {},
+    title: {
+      describe: 'Book title',
+      demandOption: true,
+      type: 'string',
+    },
+    author: {
+      describe: 'Book author',
+      demandOption: true,
+      type: 'string',
+    },
+    role: {
+      describe: 'Person who removed the book',
+      demandOption: true,
+      type: 'string',
+    },
   },
-  handler(argv) {},
+  handler(argv) {
+    console.log(argv.title, argv.author, argv.role);
+  },
 });
 
 // 6. Get all books
@@ -109,7 +136,7 @@ yargs.command({
   describe: 'Return a rented book from the library',
   builder: {
     name: {},
-    bookName: {},
+    author: {},
   },
   handler(argv) {
     console.log(argv);
@@ -121,10 +148,14 @@ yargs.command({
   command: 'rented-books',
   describe: 'List of all borrowed books',
   builder: {
-    staff: {},
+    role: {
+      describe: 'Identity of person requesting for all rented books',
+      type: 'string',
+      demandOption: true,
+    },
   },
   handler(argv) {
-    console.log(argv);
+    console.log(argv.role);
   },
 });
 
