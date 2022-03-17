@@ -121,9 +121,16 @@ yargs.command({
   command: 'rent-book',
   describe: 'Rent a book from the library',
   builder: {
-    name: {},
-    bookName: {},
-    author: {},
+    title: {
+      describe: 'Book title',
+      demandOption: true,
+      type: 'string',
+    },
+    author: {
+      describe: 'Book author',
+      demandOption: true,
+      type: 'string',
+    },
   },
   handler(argv) {
     console.log(argv);
@@ -135,8 +142,16 @@ yargs.command({
   command: 'return-book',
   describe: 'Return a rented book from the library',
   builder: {
-    name: {},
-    author: {},
+    title: {
+      describe: 'Book title',
+      demandOption: true,
+      type: 'string',
+    },
+    author: {
+      describe: 'Book author',
+      demandOption: true,
+      type: 'string',
+    },
   },
   handler(argv) {
     console.log(argv);

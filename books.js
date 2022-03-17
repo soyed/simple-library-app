@@ -18,6 +18,16 @@ const saveBooks = (data) => {
   fs.writeFileSync('books.json', dataJSON);
 };
 
+const checkBookExist = (title, author) => {
+  const books = loadBooks();
+  for (let book of books) {
+    if (book.title === title && book.author === author) {
+      return true;
+    }
+  }
+  return false;
+};
+
 /*==============  Controllers ===================*/
 const addBook = (title, author, role) => {
   const books = loadBooks();
@@ -29,9 +39,7 @@ const addBook = (title, author, role) => {
   }
 
   // Edge Case => check for duplicate book title and author
-  const duplicateBook = books.find(
-    (book) => book.title === title && book.author === author
-  );
+  const duplicateBook = checkBookExist(title, author);
 
   if (duplicateBook) {
     console.log(chalk.red.inverse('Duplicate book'));
@@ -50,7 +58,7 @@ const removeBook = (title, author, role) => {
     console.log(chalk.red.inverse('You do not have permission.'));
     return;
   }
-  debugger;
+
   const remBooks = books.filter(
     (book) => book.title !== title && book.author !== author
   );
@@ -84,4 +92,4 @@ const getAllBooks = (role) => {
   );
 };
 
-module.exports = { addBook, removeBook, getAllBooks };
+module.exports = { addBook, removeBook, getAllBooks, checkBookExist };
