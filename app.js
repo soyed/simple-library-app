@@ -1,6 +1,7 @@
 const yargs = require('yargs');
 const staff = require('./staff');
 const books = require('./books');
+const rental = require('./rental');
 
 // 1. Create command to add staff members
 yargs.command({
@@ -133,7 +134,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv);
+    rental.rentBook(argv.title, argv.author);
   },
 });
 
@@ -154,7 +155,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv);
+    rental.returnBook(argv.title, argv.author);
   },
 });
 
@@ -170,7 +171,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv.role);
+    rental.getAllRentedBooks(argv.role);
   },
 });
 

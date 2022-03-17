@@ -1,5 +1,5 @@
 const fs = require('fs');
-const chalk = require('fs');
+const chalk = require('chalk');
 const { checkBookExist } = require('./books');
 const { checkStaffRole } = require('./utils');
 
@@ -53,7 +53,7 @@ const returnBook = (title, author) => {
   }
   // edge case => check for a rental
   const remRentals = rentals.filter(
-    (rental) => rental.title === title && rental.author === author
+    (rental) => rental.title !== title && rental.author !== author
   );
 
   if (remRentals.length === rentals.length) {
@@ -73,7 +73,7 @@ const getAllRentedBooks = (role) => {
     return;
   }
   // edge case => if empty
-  if (!rentals) {
+  if (!rentals.length) {
     console.log(chalk.yellow.inverse('No books rented...'));
     return;
   }
@@ -84,4 +84,4 @@ const getAllRentedBooks = (role) => {
   );
 };
 
-module.exports = { rentBook, rentBook, getAllRentedBooks };
+module.exports = { rentBook, returnBook, getAllRentedBooks };
