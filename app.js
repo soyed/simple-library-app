@@ -1,6 +1,6 @@
-const { notStrictEqual } = require('assert');
 const yargs = require('yargs');
 const staff = require('./staff');
+const books = require('./books');
 
 // 1. Create command to add staff members
 yargs.command({
@@ -78,7 +78,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv.title, argv.author, argv.addedBy);
+    books.addBook(argv.title, argv.author, argv.role);
   },
 });
 
@@ -104,16 +104,16 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv.title, argv.author, argv.role);
+    books.removeBook(argv.title, argv.author, argv.role);
   },
 });
 
 // 6. Get all books
 yargs.command({
-  command: 'books',
+  command: 'all-books',
   describe: 'List of all books',
   handler(argv) {
-    console.log(argv);
+    books.getAllBooks(argv.role);
   },
 });
 // 7. Rent a book

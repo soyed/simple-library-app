@@ -56,7 +56,7 @@ const addStaff = (name, role) => {
 const removeStaff = (name) => {
   const staffs = loadStaffs();
 
-  const remStaffs = staffs.filter((staff) => staff.name != name);
+  const remStaffs = staffs.filter((staff) => staff.name !== name);
 
   if (remStaffs.length === staffs.length) {
     console.log(chalk.red.inverse('Invalid! No staff found!'));
