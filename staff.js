@@ -58,7 +58,7 @@ const removeStaff = (name) => {
 
   const remStaffs = staffs.filter((staff) => staff.name !== name);
 
-  if (remStaffs.length === staffs.length) {
+  if (remStaffs.length <= staffs.length) {
     console.log(chalk.red.inverse('Invalid! No staff found!'));
     return;
   }

@@ -1,6 +1,42 @@
 [
     {
-        "title": "book 1",
-        "author": "Charles Doe"
+        "title": "dune",
+        "author": "frank herbert"
+    },
+    {
+        "title": "right stuff",
+        "author": "tom wolfe"
+    },
+    {
+        "title": "booked",
+        "author": "kwame alexander"
+    },
+    {
+        "title": "almost super",
+        "author": "marion jensen"
+    },
+    {
+        "title": "crenshaw",
+        "author": "katherine applegate"
+    },
+    {
+        "title": "el deafo",
+        "author": "cece bell"
+    },
+    {
+        "title": "dogs days",
+        "author": "karen english"
+    },
+    {
+        "title": "ghost",
+        "author": "jason reynolds"
+    },
+    {
+        "title": "masterpeice",
+        "author": "elise broach"
+    },
+    {
+        "title": "restart",
+        "author": "gordon korman"
     }
 ]

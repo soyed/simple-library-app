@@ -20,8 +20,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    console.log(argv);
-    staff.addStaff(argv.name, argv.role);
+    staff.addStaff(argv.name.toLowerCase(), argv.role.toLowerCase());
   },
 });
 
@@ -37,7 +36,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    staff.removeStaff(argv.name);
+    staff.removeStaff(argv.name.toLowerCase());
   },
 });
 
@@ -53,7 +52,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    staff.getAllStaffs(argv.role);
+    staff.getAllStaffs(argv.role.toLowerCase());
   },
 });
 
@@ -79,7 +78,11 @@ yargs.command({
     },
   },
   handler(argv) {
-    books.addBook(argv.title, argv.author, argv.role);
+    books.addBook(
+      argv.title.toLowerCase(),
+      argv.author.toLowerCase(),
+      argv.role.toLowerCase()
+    );
   },
 });
 
@@ -105,7 +108,11 @@ yargs.command({
     },
   },
   handler(argv) {
-    books.removeBook(argv.title, argv.author, argv.role);
+    books.removeBook(
+      argv.title.toLowerCase(),
+      argv.author.toLowerCase(),
+      argv.role.toLowerCase()
+    );
   },
 });
 
@@ -114,7 +121,7 @@ yargs.command({
   command: 'all-books',
   describe: 'List of all books',
   handler(argv) {
-    books.getAllBooks(argv.role);
+    books.getAllBooks(argv.role.toLowerCase());
   },
 });
 // 7. Rent a book
@@ -134,7 +141,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    rental.rentBook(argv.title, argv.author);
+    rental.rentBook(argv.title.toLowerCase(), argv.author.toLowerCase());
   },
 });
 
@@ -155,7 +162,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    rental.returnBook(argv.title, argv.author);
+    rental.returnBook(argv.title.toLowerCase(), argv.author.toLowerCase());
   },
 });
 
@@ -171,7 +178,7 @@ yargs.command({
     },
   },
   handler(argv) {
-    rental.getAllRentedBooks(argv.role);
+    rental.getAllRentedBooks(argv.role.toLowerCase());
   },
 });
 

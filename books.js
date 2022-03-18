@@ -62,12 +62,12 @@ const removeBook = (title, author, role) => {
   const remBooks = books.filter(
     (book) => book.title !== title && book.author !== author
   );
+
   // edge case => if no book is found
   if (remBooks.length === books.length) {
     console.log(chalk.red.inverse('No book found'));
     return;
   }
-
   saveBooks(remBooks);
   console.log(chalk.green.inverse('Book removed!'));
 };
